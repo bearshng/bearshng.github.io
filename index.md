@@ -14,13 +14,6 @@ For each video in the dataset, we label the ground-truth by proving the bounding
 
 ## Citation
 
-> @InProceedings{Xiong_2019_CVPR,
-> author = {Fengchao Xiong, Jun Zhou, Kun Qian, Yuntao Qian},
-> title = {Spectral-spatial features for material based object tracking in hyperspectral video},
-> booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-> month = {June},
-> year = {2019}
-}
 
 ## Evaluation
 The same as OTB dataset, we conduct one-pass evaluation (OPE) to assess the performance of each tracker.  Three evaluation metrics are adopted, namely, distance precision, overlap precision and area under curve of sucess plot  to measure different tracking algorithms. The definitions of the three metrics can be seen in the paper.
