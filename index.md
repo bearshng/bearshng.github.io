@@ -22,8 +22,8 @@ The same as OTB dataset, we conduct one-pass evaluation (OPE) to assess the perf
 ## Code
 ## Citation
 > @article{xiong2018spectral,
-  title={Spectral-spatial features for material based object tracking in hyperspectral video},
-  author={Xiong, Fengchao and Zhou, Jun and Qian, Kun and Qian, Yuntao},
+  title={Material Based Object Tracking in Hyperspectral Videos},
+  author={Xiong, Fengchao and Zhou, Jun and Li Xi, and Qian, Kun and Qian, Yuntao},
   journal={arXiv preprint arXiv:1812.04179},
   year={2018}
 }
