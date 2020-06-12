@@ -1,0 +1,31 @@
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="content-wrapper">
+        <div class="col-lg-10 col-lg-offset-1">
+            <h3>{{ site.aboutTitle }}</h3>
+            <p style="text-align:justify;">Object tracking is an active research topic in computer vision and pattern recognition. We have witnessed significant progress on this topic over the past several years, with approaches moving from hand-crafted features to deep learning families. Nevertheless, tracking in grayscale or color videos has its intrinsic limitations in depicting physical properties of targets, especially reflectance of materials. It makes trackers vulnerable in complex scenarios with cluttered background and significant object shape changes. This problem can be effectively addressed by object tracking in hyperspectral videos which provide joint spectral, spatial, and temporal information, enabling computer vision system to perceive the materials of the objects besides the shape, texture, and semantic relationship of objects.</p>
+
+        <p style="text-align:justify;">The goal of this contest is to boost the research on hyperspectral object tracking. A frame-by-frame labelled dataset with 50 training videos and 35 testing videos is provided. Each video contains hyperspectral data, RGB data, and false-color data generated from the hyperspectral data. We also provide the codes and results of a number of tracking methods as baseline results.</p>
+
+        <p style="text-align:justify;">This contest is organized in conjunction with the <a href="http://www.ieee-whispers.com/">11th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)</a>. All participants are required to submit a report with their results to the WHISPERS paper review system. A special session will be organised for accepted papers which will also be included in the WHISPERS proceedings. </p>
+
+           <!--  <div class="row about-details">
+                {% assign animationDelay = 0 %}
+                {% for about in site.aboutBlock %}
+                {% assign colWidth = 12 | divided_by: forloop.length %}
+                <div class="col-md-{{ colWidth }} col-xs-6">  
+                    <div class="animated hiding" data-animation="fadeInDown" data-delay="{{ animationDelay }}">
+                        <h5>{{ about.title }}</h5>
+                        <img class="img-circle" src="{{ site.baseurl }}/img/about-section/{{ about.image }}" height="128" width="128" alt="{{ about.title }}">
+                        <p>{{ about.text }}</p>
+                    </div>
+                </div>
+                {% assign animationDelay = animationDelay | plus:500 %}
+                {% assign check = forloop.index | modulo:2 %}
+                {% if check == 0 %} <div class="clearfix visible-xs"></div> {% endif %}
+                {% endfor %}
+            </div> -->
+        </div>
+    </div>
+</section>
+<!-- End About Section -->

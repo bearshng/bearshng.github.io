@@ -1,0 +1,99 @@
+<!-- Begin Blog-->
+<section id="blog" class="blog">
+    <div class="content-wrapper text-left">
+        <div class="col-md-10 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">
+            <div class="col-lg-8 col-md-10 col-xs-12">
+                  <h4 style="text-align: center; font-size: 35.625px; ">Dataset</h4>
+                    <article class="row post">
+                        <p class="post-body">The dataset used in this contest was acquired using a XIMEA SNm4x4 VIS Camera. The vides were captured at 25 frames per second (FPS). Each frame was originally captured in 2D with 16 bands arranged in a mosaic mode. Each frame is then converted to 3D with the first two dimensions index the location of each pixel, and the third dimension indexes the band number (code provided). The 16 bands covers the range from 470nm to 620nm, and each band is in the size of 512×256 pixels. RGB videos were also acquired at the same frame rate in a view point very close to the hyperspectral videos. False-color videos generated from the hyperspectral videos are also provided.</p>
+                    </article>
+                    <article class="row post">
+                       <h5 style="">Prepreocessing</h5>  
+                       <h5></h5>
+                        <h6 style="font-size: 20px;font-style: italic;">Camera Calibration</h6>            
+                        <p class="post-body">The camera calibration process involves two steps: dark calibration and spectral correction. Dark calibration aims to remove the influence of noises produced by the camera sensor. It is done by subtracting a dark frame from the captured image, for which the dark frame was captured with lens covered by a cap. The goal of spectral calibration is to reduce the distortion of spectral responses. It is done by applying a sensor-specific spectral correction matrix on the acquired image.</p>
+
+                       <h6 style="font-size: 20px;font-style: italic;">Image Registration</h6>            
+                        <p class="post-body">The hyperspectral sequences and color sequences are registered to make them describe almost the same scene. This is done by manually selecting matching points in the first frame of both hyperspectral and color videos and then calculating geometrical transformation. The resulted transformation matrix was applied to all subsequent color frames to make alignment with the corresponding hyperspectral frames.</p>     
+
+                       <h6 style="font-size: 20px;font-style: italic;">Image Conversion</h6>            
+                        <p class="post-body">To ensure fair comparison, the hyperspectral videos were converted to false color videos using CIE color matching functions. This produces strictly spatially aligned hyperspectral and false-color videos.</p>
+                     <p class="post-body">
+                     For details on the above steps, please refer to: F. Xiong, J. Zhou, and Y. Qian. "Material based object tracking in hyperspectral videos", IEEE Trans. Image Process., vol. 29, no. 1, pp. 3719-3733, 2020.</p>                                               
+                    </article>     
+                    <article class="row post">
+                       <h5>Annotation</h5>      
+                        <p class="post-body">A single upright bounding box is provided for the location of the target object in each frame. The bounding box is represented by the centre location and its height and width. The labels for hyperspectral and color videos were generated independently. The labels for the hyperspectral videos can be used directly on the false-color videos.</p>                                               
+                    </article>    
+                     <article class="row post">
+                       <h5>Attributes</h5>      
+                        <p class="post-body">The whole dataset contains 40 sets of videos for training and 35 sets of videos for testing. Every video is labelled with associated challenging factors out of eleven attributes, including illumination variation (IV), scale variation (SV), occlusion (OCC), deformation (DEF), motion blur (MB), fast motion (FM), in-plane rotation (IPR), out-of-plane rotation (OPR), out-of-view (OV), background clutters (BC), and low resolution (LR).</p>                                               
+                    </article>    
+        </div>
+            <div class="col-lg-8 col-md-10 col-xs-12">   
+                 <h4 style="text-align: center; font-size: 35.625px; ">Dataset and Source Code Links</h4>
+                     <article class="row post">
+                      <h5>Dataset Link:</h5>      
+                        <p class="post-body">The dataset can be accessed via <a>Google Drive</a> or <a>Baidu YunPan</a> Access code: ttge</p>                                               
+                    </article>    
+
+                    <article class="row post">
+                       <h5>Source Code Link:</h5>       
+                        <p class="post-body">Evaluation code: Evaluation.zip</p> <p class="post-body">2D image to hyperspectral cube conversion code: X2Cube.zip</p>                                           
+                    </article>                      
+        </div>        
+
+
+
+           <!--  <h3>{{ site.blogTitle }}</h3>
+            <div class="col-lg-8 col-md-10 col-xs-12">
+                {% for post in site.posts %}
+                    <article class="row post">
+                        <a href="{{ site.baseurl | append: post.url }}" title="{{ post.title }}"><h4>{{ post.title }}</h4></a>
+                        <div class="post-header">
+                            <div class="published col-md-6 col-xs-6 pull-left">
+                                <span class="caption">Posted:</span>
+                                <span class="publish-date" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}{% if post.meta %} • {{ post.meta }}{% endif %}</span>
+                            </div>
+                            <div class="share col-md-6 col-xs-6 pull-right">
+                                <ul class="social-links">
+                                    {% assign postUrl = site.url | append: site.baseurl | append: post.url %} 
+                                    <li>
+                                        <a href="#" onclick="window.open('https://plus.google.com/share?url={{ postUrl }}', 'newwindow', 'width=600, height=500'); return false;">
+                                            <svg class="icon icon-google-plus" viewBox="0 0 30 32">
+                                                <use xlink:href="{{ site.baseurl }}/img/sprites/sprites.svg#icon-google-plus"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="window.open('https://twitter.com/home?status={{ postUrl }}', 'newwindow', 'width=600, height=250'); return false;">
+                                            <svg class="icon icon-twitter" viewBox="0 0 30 32">
+                                                <use xlink:href="{{ site.baseurl }}/img/sprites/sprites.svg#icon-twitter"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ postUrl }}', 'newwindow', 'width=600, height=500'); return false;">
+                                            <svg class="icon icon-facebook" viewBox="0 0 30 32">
+                                                <use xlink:href="{{ site.baseurl }}/img/sprites/sprites.svg#icon-facebook"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="post-body">{{ post.content | strip_html | truncate: 350 }} <a href="{{ site.baseurl | append: post.url }}">continue reading</a></p>
+                    </article>
+                {% endfor %} 
+ -->
+
+              <!--   <div class="row text-center">
+                    <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}" target="_blank">via RSS</a>
+                    </p>
+                </div> -->
+
+            
+        </div>
+    </div>
+</section>
+<!-- End Blog -->
